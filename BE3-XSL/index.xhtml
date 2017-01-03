@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="index.css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+    <head>
+		<meta http-equiv="Content-Type" content="text/xml ; charset=UTF-8"/>
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' />
+        <link href="https://fonts.googleapis.com/css?family=Bungee|Roboto" rel="stylesheet"/>
+        <title>BE3 - XSLT</title>
+	</head>
+
+	<body>
+        <div class="container">
+            <div id="holder-header">
+                <div id="header" class="col-xs-12 col-md-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <h1>XML StyleSheet Transformation</h1>
+                            <p>by DEVAUX Camille &amp; GROUSSARD Arnaud</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="main">
+			<div class="container">
+				<div class="col-xs-12 col-md-8">
+					<div class="titre">
+                        <h2>Démarche suivie et raisonnement</h2>
+                    </div>
+                    <p>Pour ce BE, nous devions transformer un même document XML avec différentes feuilles de style, en les transformant en tableaux, fiches, schémas, graphiques, PDFs.</p>
+                    <div class="titre">
+                        <h2>Dévelopment d'une feuille de style XSL simple</h2>
+                    </div>
+
+                    <p>Dans cette première partie, nous développons une feuille de style simple, pour visualiser les informations des personnes contenues dans le document XML.</p>
+                    <p>Cette page présente les informations sur les personnes du document XML en 2 tableaux, un premier concerne les professeurs, et le second les élèves.</p>
+                    <p>Comme la plupart des travaux effectués dans ce cours, ceux-ci ont été developpés itérativement, en commencant par des versions très simples, puis par petites améliorations itératives, en intégrant d'avantages de fonctionnalités et de traitements des données en fonction des problèmes rencontrés et de notre maîtrise croissante de XSLT lors du développement. Nous avons ainsi été amenés à inclure le classement alphabétique en fonction du nom de famille, le remplacement des majuscules dans les adresses emails, la séparation entre professeurs et élèves, l'intégration d'une condition, sur l'existence du numéro de téléphone par exemple,</p>
+                    <p>Cette première partie nous a permis de découvrir XSLT, ses possibilités, et ses premières limitations :</p>
+                    <ul>
+                        <li>Nous avons choisi d'avoir recours à une feuille de style CSS indépendante pour gérer le style de la mise en page. La transformation des données et le style de la mise en page est ainsi géré indépendamment.</li>
+                        <li>Que choisir entre schéma plats ou profonds, entre <i>xsl:apply-templates</i> ou <i>xsl:value-of</i>, traitement récursif ou procédural ? Nous avons par la suite souvent utilisé un mix des deux solutions qui se proposaient à nous afin de répondre au mieux à nos besoins. </li>
+                    </ul>
+                    <div class="wrap">
+                        <div class="link-logo1">
+                            <a href="option1.xml"><img class="img-thumbnail" src="file_xml2.png" alt="OPTION1.XML"/><br/>Document XML stylisé</a>
+                        </div>
+                        <div class="link-logo1">
+                            <a href="option1.xsl" ><img class="img-thumbnail" src="file_xslt.png" alt="OPTION1.XSL"/><br/>Feuille de style XSLT</a>
+                        </div>
+                        <div class="link-logo1">
+                            <a href="option1.css" ><img class="img-thumbnail" src="file_css.png" alt="OPTION1.CSS"/><br/>Feuille de style CSS</a>
+                        </div>
+                    </div>
+
+                    <div class="titre">
+                        <h2>Autres feuilles de style</h2>
+                    </div>
+
+                    <p>Dans cette partie, nous ne voulons non plus mettre en forme le document xml sous forme de tableau simple mais plutôt choisir les données qui nous intéressent et les représenter au mieux.</p>
+
+                    <p>Nous avons donc créé deux pages : Une fiche élève répertoriant la liste des élèves et les cours auxquels ceux-ci sont inscrits avec notes, appréciations et absences, et une fiche cours répertoriant la liste des cours, le professeur responsable ainsi que les élèves inscrits avec notes, appréciations et absences.</p>
+
+                    <div class="titre">
+                        <h3>Fiches Elèves</h3>
+                    </div>
+
+                    <p><b>Pour les FICHES ELEVES</b>, nous partons d'un identifiant étudiant (<i>ID</i>) dans la branche <i>personnes</i> pour aller chercher la liste de nos étudiants.</p>
+                    <p>Or dans <i>personnes</i>, nous avons également les professeurs. Nous ne devons donc sélectionner <b>que les étudiants</b>.</p>
+                    <p>Pour cela nous sélectionnons l'identifiant d'un étudiant, puis nous <b>testons si cet attribut est renseigné dans tout le document</b> pour aller chercher les élements <i>nom</i>, <i>prénom</i>, <i>notes</i>, <i>appréciations</i> et <i>absences</i>.</p>
+                    <p>Nous ne prenons donc pas un à un les entités présentes dans personnes, mais "survolons" le document XML avec l'id d'un étudiant.</p>
+
+                    <div class="wrap">
+                        <div class="link-logo1">
+                            <a href="option2.xml"><img class="img-thumbnail" src="file_xml2.png" alt="OPTION2.XML"/><br/>Document XML stylisé</a>
+                        </div>
+                        <div class="link-logo1">
+                            <a href="option2.xsl" ><img class="img-thumbnail" src="file_xslt.png" alt="OPTION2.XSL"/><br/>Feuille de style XSLT</a>
+                        </div>
+                        <div class="link-logo1">
+                            <a href="option23.css" ><img class="img-thumbnail" src="file_css.png" alt="OPTION.CSS"/><br/>Feuille de style CSS</a>
+                        </div>
+                    </div>
+
+                    <div class="titre">
+                        <h3>Fiches Cours</h3>
+                    </div>
+
+                    <p><b>Pour les FICHES COURS</b>, nous nous reportons à la branche <i>cours</i> de notre document XML. Nous récupérons l'intitulé du cours puis à partir de celui-ci nous allons chercher l'id du professeur responsable.</p>
+                    <p>Nous devons enregistrer l'id du professeur dans une variable pour ensuite pouvoir récupérer le nom et le prénom du professeur qui se trouvent dans l'autre branche du document xml, <i>personnes</i>.</p>
+                    <p>Une fois <i>nom</i> et <i>prénom</i> récupérés, nous retournons dans la branche <i>cours</i>, et nous procédons de même pour les étudiants inscrits au cours : récupération de l'id, correspondance dans la branche <i>personnes</i> et récupération du <i>nom</i> et <i>prénom</i>. Puis enfin nous allons chercher leurs <i>notes</i>, <i>absences</i> et <i>appréciations</i> simplement dans la branche <i>cours</i> sur laquelle nous avons commencé.</p>
+                    <p>Cette fiche <b>nécessite de parcourir plusieurs fois l'arbre défini par le document XML et de définir plusieurs variables</b>. Nous avons utilisé des <b>modes</b> pour mieux organiser notre code et définir les templates XSL non pas directement lorsque explicités, mais séparément.
+                        Les modèles nommés permettent de <b>mieux manipuler des templates nécessitant des appels aux contenus présents dans une autre branche que celle sur laquelle nous nous situons.</b></p>
+
+                    <div class="wrap">
+                        <div class="link-logo1">
+                            <a href="option3.xml"><img class="img-thumbnail" src="file_xml2.png" alt="OPTION3.XML"/><br/>Document XML stylisé</a>
+                        </div>
+                        <div class="link-logo1">
+                            <a href="option3.xsl" ><img class="img-thumbnail" src="file_xslt.png" alt="OPTION3.XSL"/><br/>Feuille de style XSLT</a>
+                        </div>
+                        <div class="link-logo1">
+                            <a href="option1.css" ><img class="img-thumbnail" src="file_css.png" alt="OPTION1.CSS"/><br/>Feuille de style CSS</a>
+                        </div>
+                    </div>
+
+                    <div class="titre">
+                        <h3>Graphique SVG</h3>
+                    </div>
+                    <p>Dans cette partie, nous avons utilisé XSLT pour créer un graphique à partir des données du document XML.</p>
+                    <p>Le graphique représente les notes obtenues dans chaque cours, de façon anonyme, et la moyenne des notes de chaque cours. L'intérêt de construire un graphique sous XSLT réside dans la génération dynamique de celui-ci par rapport aux données. En effet, à condition que la structure initiale des données soit respectée, les données seront affichées dans le graphique, quelque soit leur volume.</p>
+                    <p>Afin de completer cet aspect dynamique, nous avons paramétré quelques grandeurs géométriques notables du graphique, qui ne sont pas directement dépendantes des données, mais qui participent à l'harmonie globale du graphique. On peut retrouver notamment :</p>
+                    <ul>
+                        <li>Marge extérieur latérale</li>
+                        <li>Marge intérieur latérale</li>
+                        <li>Marge extérieur supérieure</li>
+                        <li>Marge intérieur supérieure</li>
+                        <li>Hauteur de l'échelle de notation</li>
+                        <li>Hauteur dédiée à l'intitulé des cours</li>
+                        <li>Largeur des colonnes de cours</li>
+                        <li>Zoom global du graphique</li>
+                    </ul>
+                    <p>La largueur du graphique se base sur le nombre de cours enseignés. Deux principales boucles sont exploitées, une première sur les cours enseignées, afin d'obtenir les moyennes, les intitulé des cours, et une seconde, sur les élèves assistant à chacun des cours, pour obtenir leur note individuelles dans chaque cours.</p>
+                    <p>Cette partie a nécéssité un usage intensif de l'insertion d'éléments et d'attributs (<i>xsl:element</i> et <i>xsl:attribute</i>). En effet, beaucoup d'attribut sont dépendants de calculs réalisés à partir des données du document XML et du paramétrage mis en place, les éléments et leurs attributs sont majoritairement dynamiques.</p>
+                    <p>La mise en place de graduations (de 0, à 20), indépendantes des données du document XML, nous a permit de voir une limite de l'application XSLT, le manque de dispositif permettant de réaliser des boucles <i>for</i> ou  <i>while</i>, sur des éléments indépendants du document XML initial. Ainsi, ces graduations ont dû être écrites "à la main", sans la possibilité (à notre connaissance) d'utiliser un processus récursif.</p>
+                    <p>Quelques autres défis se sont présentés lors du développement du graphique, comme le contrôle du nombre de chiffres significatifs des moyennes calculées, par exemple, où nous avons du nous en remettre à la fonction <i>round</i> sur des nombres intermédiaires.</p>
+
+                    <div class="wrap">
+                        <div class="link-logo1">
+                            <a href="option-svg.xml"><img class="img-thumbnail" src="file_xml2.png" alt="OPTION-SVG.XML"/><br/>Document XML stylisé</a>
+                        </div>
+                        <div class="link-logo1">
+                            <a href="option-svg.xsl" ><img class="img-thumbnail" src="file_xslt.png" alt="OPTION-SVG.XSL"/><br/>Feuille de style XSLT</a>
+                        </div>
+                    </div>
+
+                    <div class="titre">
+                        <h3>Papier - XSLT-FO</h3>
+                    </div>
+                    <p>Dans cette partie, nous avons utilisé XSLT pour créer un document XSL-FO visant à l'impression d'un PDF</p>
+                    <p>Notre document XSL-FO vise à produire un PDF avec les coordonnées des élèves et professeurs.</p>
+                    <p>Nous avons tenté ici de produire un XSL-FO valide et bien formé sans nous soucier de la complexité de l'information représentée. Nous représentons les données issues de "personnes" simplement présentes dans le document option.xml</p>
+
+                    <p>Pour cela, il faut d'abord définir notre document XSL-FO, marges, region-before (haut de page), region-after (pied de page) et également définir le tableau en spécifiant sa taille, sa forme.</p>
+                    <p>Nous définissons le nombre de colonnes du tableau au préalable puis à l'aide de fo:table-cell, nous insérons notre contenu dans les cellules. Nous avons alors créé nos templates comme précédemment pour récupérer les coordonnées des personnes</p>
+                    <p>XSL-FO ne produisant pas un PDF tout seul, il nous a été difficile au départ d'observer le résultat de notre code.</p>
+                    <p>La validation et la génération du document a été faite à partir du site <a href="http://www.utilities-online.info/foprender">Utilities Online - FO Render</a>.</p>
+
+                    <div class="wrap">
+                        <div class="link-logo1">
+                            <a href="option-xslfo.xml"><img class="img-thumbnail" src="file_xml2.png" alt="OPTION-XSLFO.XML"/><br/>Document XML stylisé</a>
+                        </div>
+                        <div class="link-logo1">
+                            <a href="option-xslfo.xsl" ><img class="img-thumbnail" src="file_xslt.png" alt="OPTION-XSLFO.XSL"/><br/>Feuille de style XSLT</a>
+                        </div>
+                        <div class="link-logo1">
+                            <a href="option-xslfo.pdf"><img class="img-thumbnail" src="file_pdf.png" alt="OPTION-XSLFO.PDF"/><br/>Document PDF généré</a>
+                        </div>
+                    </div>
+
+				</div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="side-menu">
+                        <h3>
+                            Raccourcis
+                        </h3>
+                        <div class="wrap">
+                            <div class="link-logo2">
+                                Tableau des personnes
+                                <div class="shortcut">
+                                    <a href="option1.xml"><img class="img-thumbnail2" src="file_xml.png" alt="OPTION1.XML"/></a>
+                                    <a href="option1.xsl"><img class="img-thumbnail2" src="file_xslt.png" alt="OPTION1.XSL"/></a>
+                                    <a href="option1.css"><img class="img-thumbnail2" src="file_css.png" alt="OPTION1.CSS"/></a>
+                                </div>
+                                Fiches Elèves
+                                <div class="shortcut">
+                                    <a href="option2.xml"><img class="img-thumbnail2" src="file_xml.png" alt="OPTION2.XML"/></a>
+                                    <a href="option2.xsl"><img class="img-thumbnail2" src="file_xslt.png" alt="OPTION2.XSL"/></a>
+                                    <a href="option23.css"><img class="img-thumbnail2" src="file_css.png" alt="OPTION.CSS"/></a>
+                                </div>
+                                Fiches Cours
+                                <div class="shortcut">
+                                    <a href="option3.xml"><img class="img-thumbnail2" src="file_xml.png" alt="OPTION3.XML"/></a>
+                                    <a href="option3.xsl"><img class="img-thumbnail2" src="file_xslt.png" alt="OPTION3.XSL"/></a>
+                                    <a href="option23.css"><img class="img-thumbnail2" src="file_css.png" alt="OPTION.CSS"/></a>
+                                </div>
+                                Graphique SVG
+                                <div class="shortcut">
+                                    <a href="option-svg.xml"><img class="img-thumbnail2" src="file_xml.png" alt="OPTION-SVG.XML"/></a>
+                                    <a href="option-svg.xsl"><img class="img-thumbnail2" src="file_xslt.png" alt="OPTION-SVG.XSL"/></a>
+                                </div>
+                                PDF via XSL-FO
+                                <div class="shortcut">
+                                    <a href="option-xslfo.xml"><img class="img-thumbnail2" src="file_xml.png" alt="OPTION-XSLFO.XML"/></a>
+                                    <a href="option-xslfo.xsl"><img class="img-thumbnail2" src="file_xslt.png" alt="OPTION-XSLFO.XSL"/></a>
+                                    <a href="option-xslfo.pdf"><img class="img-thumbnail2" src="file_pdf.png" alt="OPTION-XSLFO.PDF"/></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <h2>Conclusion</h2>
+                    <p>XSLT est une application XML puissante qui permet de transformer un document XML en un autre document (HTML, SVG, etc.), qui peut être dans un autre métalangage que XML, avec beaucoup de flexibilité. Les formats et documents de sorties sont nombreux. L'indépendance de la feuille de style XSLT par rapport au document XML permet d'appliquer le même traitement à différents documents XML ayant la même structuration des données, voire à des documents XML dont les données évoluent dans le temps.</p>
+                </div>
+			</div>
+		</div>
+	</body>
+</html>

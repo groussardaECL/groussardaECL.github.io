@@ -1,0 +1,51 @@
+/* Général */
+
+body {
+	font-family:Helvetica;
+	margin:0px;
+	font-size:15px;
+
+}
+th {
+	color:white;
+	padding:5px;
+	border:1px solid black;
+	background-color: #de1b1b;
+}
+
+td {
+	padding:5px;
+	border:1px solid black;
+}
+
+h3 {
+/*  text-align:center; */	
+	color:	#696969;
+	font-size:20px;
+}
+
+table {
+
+    border:1px solid black;
+    border-collapse:collapse;
+    padding: 15px;
+    width:75%;
+    margin-left:auto;
+	margin-right: auto;
+	/*
+	table-layout: fixed;
+	 */
+}
+
+
+
+h1 {
+	max-width: 60%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.annuaire {
+	display: block;
+	margin:25px;
+}

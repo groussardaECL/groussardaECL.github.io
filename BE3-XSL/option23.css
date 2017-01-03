@@ -1,0 +1,99 @@
+/* Général */
+
+body {
+	font-family:Helvetica;
+	margin:0px;
+	font-size:15px;
+
+}
+th {
+	color:white;
+	padding:5px;
+	border:1px solid black;
+	background-color:#008B8B;
+}
+
+td {
+	padding:5px;
+	border:1px solid black;
+}
+
+h3 {
+/*  text-align:center; */	
+	color:	#696969;
+	font-size:20px;
+}
+
+table {
+    float: left;
+    border:1px solid black;
+    border-collapse:collapse;
+    padding: 15px;
+    width:70%;
+    margin-left:30px;
+}
+
+.en-tete {
+	display: table;
+	margin:0px auto;
+	padding: 30px;
+	background-color:#F0F8FF;
+	width:100%;
+	height: auto;
+}
+
+
+/* Spécifique aux feuilles de notes par élève */
+
+.fiches-note {
+    display: table;
+    position: relative;
+    padding: 15px;
+    margin: 15px;
+    width:100%;
+}
+
+
+
+.titre-table-note {
+	background-color:#DC143C;
+}
+
+
+.intitule-cours, .appreciation {
+	width:150px;
+}
+
+.note, .absence {
+	width:70px;
+	text-align:right;
+}
+
+
+
+/* Spécifique à la liste des cours avec professeurs et élèves inscrits */
+
+.fiches-cours {
+    position: relative;
+    padding: 15px;
+    margin:15px;
+    display:table;
+    width:100%;
+}
+
+.nom, .prenom {
+	width:70px;
+}
+
+.titre-table-cours {
+	background-color:#4682B4;
+}
+
+.coordprof {
+	margin-left:30px;
+}
+
+.cours-soustitre {
+	font-size:17px;
+}
+

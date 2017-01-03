@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="option2.xsl"?>
+
+<option>
+
+<!-- liste de personnes -->
+<personnes>
+ <personne id="P1" civilité="M.">
+  <prénom>Jérôme</prénom>
+  <nom>Gourdin</nom>
+  <phone>06 54 32 10 98</phone>
+  <email>J-Go@freedot.com</email>
+  <adresse>6, impasse des fées</adresse>
+  <ville>Maubeuge</ville>
+ </personne>
+ <personne id="P2" civilité="M.">
+  <prénom>Raymond</prénom>
+  <nom>Deubaze</nom>
+  <phone>01 02 03 04 05</phone>
+  <email>Raymond.Deubaze@ecl1999.ec-lyon.fr</email>
+  <adresse>72, avenue des Gobelins</adresse>
+  <ville>Malville</ville>
+ </personne>
+ <personne id="P3" civilité="Mlle">
+  <prénom>Elsa</prénom>
+  <nom>Plique</nom>
+  <email>elsa@yahoo.fr</email>
+  <adresse>9, rue de l'Arc-en-ciel</adresse>
+  <ville>Vénissieux</ville>
+ </personne>
+ <personne id="P4" civilité="Mme">
+  <prénom>Ginette</prénom>
+  <nom>Ringard</nom>
+  <phone>04 33 22 11 00</phone>
+  <email>gigi@wannadoux.fr</email>
+  <adresse>12, rue de la gare</adresse>
+  <ville>Trouville</ville>
+ </personne>
+ <personne id="P5" civilité="M.">
+  <prénom>Jean</prénom>
+  <nom>Aymard</nom>
+  <phone>09 64 32 11 08</phone>
+  <email>Jeannot@patro.net</email>
+  <adresse>2, place du puits</adresse>
+  <ville>Villeneuve d'Asq</ville>
+ </personne>
+ <personne id="P6" civilité="Mlle">
+  <prénom>Sandra</prénom>
+  <nom>Duciel</nom>
+  <phone>09 99 99 99 99</phone>
+  <email>sandy@sky.net</email>
+  <adresse>1023, montée des nues</adresse>
+  <ville>Mont-Joly</ville>
+ </personne>
+ <personne id="P7" civilité="M.">
+  <prénom>Jules</prénom>
+  <nom>Dechez</nom>
+  <phone>01 23 45 67 89</phone>
+  <email>Jules@smith.com</email>
+  <adresse>5, avenue des Trolls</adresse>
+  <ville>Cours-la-Ville</ville>
+ </personne>
+ <personne id="P8" civilité="M.">
+  <prénom>Antoine</prénom>
+  <nom>Nette</nom>
+  <phone>08 16 32 64 12</phone>
+  <email>tony@orange.net</email>
+  <adresse>49, rue de la mare</adresse>
+  <ville>Les Rousses</ville>
+ </personne>
+ <personne id="P9" civilité="Mlle">
+  <prénom>Julie</prénom>
+  <nom>Trau</nom>
+  <phone>02 49 24 16 12</phone>
+  <email>juliette@city.com</email>
+  <adresse>42 bis, rond-point de la libération</adresse>
+  <ville>Marseille</ville>
+ </personne>
+ <personne id="P10">
+  <prénom>Guy</prénom>
+  <nom>Liguili</nom>
+  <phone>06 03 99 63 12</phone>
+  <email>guy.liguili@telenet.com</email>
+  <adresse>9, boulevard des mouettes</adresse>
+  <ville>Etretat</ville>
+ </personne>
+ <personne id="P11">
+  <prénom>Jeanne</prénom>
+  <nom>Doe</nom>
+  <phone>01 68 72 11 04</phone>
+  <email>jeanne23@mobil-et.net</email>
+  <adresse>49, avenue des alliés</adresse>
+  <ville>Sarreguemines</ville>
+ </personne>
+ <personne id="P12">
+  <prénom>Jean</prénom>
+  <nom>Aymard</nom>
+  <phone>09 01 02 03 04</phone>
+  <email>jad@email.biz</email>
+  <adresse>33 montée des chalumeaux</adresse>
+  <ville>Villeneuve d'Ascq</ville>
+ </personne>
+
+</personnes>
+
+<!-- cours 1 -->
+<cours intitulé="Technologies de validation" prof="P1">
+ <étudiant id="P4">
+  <note>12.5</note>
+  <absences>1</absences>
+  <comment>Devrait se mettre à jour</comment>
+ </étudiant>
+ <étudiant id="P3">
+  <note>16.7</note>
+  <absences>0</absences>
+  <comment>Excellent élément</comment>
+ </étudiant>
+ <étudiant id="P8">
+  <note>12.0</note>
+  <absences>2</absences>
+  <comment>Trop souvent dans les nuages</comment>
+ </étudiant>
+ <étudiant id="P10">
+  <note>10.0</note>
+  <absences>3</absences>
+  <comment>Trop dissipé</comment>
+ </étudiant>
+ <étudiant id="P5">
+  <note>8.3</note>
+  <absences>0</absences>
+  <comment>Fait des efforts, mais doit progresser</comment>
+ </étudiant>
+</cours>
+
+<!-- cours 2 -->
+<cours intitulé="XML Schema" prof="P6">
+ <étudiant id="P2">
+  <note>11.3</note>
+  <absences>2</absences>
+  <comment>Peut mieux faire</comment>
+ </étudiant>
+ <étudiant id="P11">
+  <note>12.1</note>
+  <absences>0</absences>
+  <comment>Un peu perdue</comment>
+ </étudiant>
+ <étudiant id="P9">
+  <note>14.0</note>
+  <absences>0</absences>
+  <comment>Le mieux est l'ennemi du bien</comment>
+ </étudiant>
+ <étudiant id="P4">
+  <note>12.0</note>
+  <absences>2</absences>
+  <comment>Manque de recul</comment>
+ </étudiant>
+ <étudiant id="P8">
+  <note>11.0</note>
+  <absences>3</absences>
+  <comment>Semble absent</comment>
+ </étudiant>
+ <étudiant id="P3">
+  <note>17</note>
+  <absences>0</absences>
+  <comment>Bon résultats</comment>
+ </étudiant>
+</cours>
+
+<!-- cours 3 -->
+<cours intitulé="Transformations XSLT" prof="P12">
+ <étudiant id="P3">
+  <note>14.2</note>
+  <absences>0</absences>
+  <comment>C'est bien, il faut persévérer</comment>
+ </étudiant>
+ <étudiant id="P5">
+  <note>8.25</note>
+  <absences>0</absences>
+  <comment>Une transformation du cursus semble nécessaire</comment>
+ </étudiant>
+ <étudiant id="P7">
+  <note>12.0</note>
+  <absences>1</absences>
+  <comment>Bien</comment>
+ </étudiant>
+ <étudiant id="P9">
+  <note>10.0</note>
+  <absences>2</absences>
+  <comment>Se complait dans le triste anonymat de la moyenne</comment>
+ </étudiant>
+ <étudiant id="P11">
+  <note>5.0</note>
+  <absences>3</absences>
+  <comment>Devrait changer d'air</comment>
+ </étudiant>
+ <étudiant id="P8">
+  <note>18</note>
+  <absences>0</absences>
+  <comment>Excellent élément</comment>
+ </étudiant>
+</cours>
+</option>

@@ -1,0 +1,30 @@
+<html>
+
+<head></head>
+
+<body>
+
+<h2>Autres feuilles de style</h2>
+
+<p><br/></p>
+
+<p>Dans cette partie, nous ne voulons non plus mettre en forme le document xml sous forme de tableau simple mais plutôt choisir les données qui nous intéressent et les représenter au mieux.</p>
+
+<p>Nous avons donc créé deux pages : Une fiche élève répertoriant la liste des élèves et les cours auxquels ceux-ci sont inscrits avec notes, appréciations et absences, et une fiche cours répertoriant la liste des cours, le professeur responsable ainsi que les élèves inscrits avec notes, appréciations et absences.</p>
+
+<p><br/></p>
+
+<p><b>Pour les FICHES ELEVES</b>, nous partons d'un id étudiant dans la branche personnes pour aller chercher la liste de nos étudiants.</p>
+<p>Or dans personnes, nous avons également les professeurs. Nous ne devons donc sélectionner <b>que les étudiants</b>.</p>
+<p>Pour cela nous sélectionnons l'id d'un étudiant, puis nous <b>testons si cet attribut est renseigné dans tout le document</b> pour aller chercher autant nom prénom que notes appréciations et absences.</p>
+<p>Nous ne prenons donc pas un à un les entités présentes dans personnes, mais "survolons" le document XML avec l'id d'un étudiant.</p>
+
+<p><br></br></p>
+
+<p><b>Pour les FICHES COURS</b>, nous nous reportons à la branche "cours" de notre document XML. Nous récupérons l'intitulé du cours puis à partir de celui-ci nous allons chercher l'id du professeur responsable.</p>
+<p>Nous devons enregistrer l'id du professeur dans une variable pour ensuite pouvoir récupérer le nom et le prénom du professeur qui se trouvent dans l'autre branche du document xml, "personnes".</p>
+<p>Une fois nom et prénom récupérés, nous retournons dans la branche "cours", et nous procédons de même pour les étudiants inscrits au cours : récupération de l'id, correspondance dans la branche "personnes" et récupération du nom et prénom. Puis enfin nous allons chercher leurs notes, absences et appréciations simplement dans la branche "cours" sur laquelle nous avons commencé.</p>
+<p>Cette fiche <b>nécessite de se ballader plusieurs fois dans l'arbre défini par le document XML et de définir plusieurs variables</b>. Nous avons utilisé des <b>modes</b> pour mieux organiser notre code et définir les templates XSL non pas directement lorsque explicités, mais séparemment.
+Cet attribut permet de <b>mieux manipuler des templates nécessitant des appels aux contenus présents dans une autre branche que celle sur laquelle nous nous situons.</b></p>
+
+</body>
